@@ -14,18 +14,18 @@ void settings(GtkWidget *settingsMan, gpointer data) {
 }
 // Run first time set up scripts
 void first(GtkWidget *payload, gpointer data){
-    system("sh ./tools/fts.sh"); // Run first time setup script
+    system("/bin/bash ./tools/fts.sh"); // Run first time setup script
     system("touch ./data.json && ./tools/Reboot");
 }
 
 //Load VFIO drivers
 void vfiod(GtkWidget *vfio, gpointer data) {
-    system("sh ./tools/vfiomgr.sh && ./tools/Reboot"); // Run VFIO driver script
+    system("/bin/bash ./tools/vfiomgr.sh && ./tools/Reboot"); // Run VFIO driver script
 }
 
 // Load Default drivers
 void defaultd(GtkWidget *calculate, gpointer data) {
-    system("sh ./tools/defaultmgr.sh && ./tools/Reboot"); // Run default GPU driver script
+    system("/bin/bash ./tools/defaultmgr.sh && ./tools/Reboot"); // Run default GPU driver script
 }
 
 // Load CSS for GTK
